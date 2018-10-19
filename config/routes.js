@@ -14,8 +14,6 @@ module.exports = server => {
 //get JWT secret key
 const secret = require("../_secrets/keys").jwtKey;
 
-console.log(secret);
-
 function register(req, res) {
   // implement user registration
   const user = req.body;

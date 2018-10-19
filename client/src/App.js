@@ -46,9 +46,9 @@ class App extends Component {
     if (this.state.index >= 7) {
       this.getMoreJokes();
     }
-    this.state.index++;
 
-    if (this.state.joke) {
+    if (this.state.index >= 0 && this.state.index < 9) {
+      this.state.index++;
       this.setState({
         ...this.state,
         joke: this.state.jokes[this.state.index + 1]
@@ -57,16 +57,26 @@ class App extends Component {
   }
 
   previousJoke() {
-    if (this.state.index >= 1) {
+    if (this.state.index <= 1) {
       this.getMoreJokes();
     }
-    this.state.index--;
 
-    if (this.state.joke) {
-      this.setState({
-        ...this.state,
-        joke: this.state.jokes[this.state.index - 1]
-      });
+    if (this.state.index > 0 && this.state.index < 9) {
+      this.state.index--;
+
+      if (this.state.joke) {
+        this.setState({
+          ...this.state,
+          joke: this.state.jokes[this.state.index - 1]
+        });
+      } else
+        this.setState(
+          {
+            ...this.state,
+            joke: { setup: "Joke not found 404", punchline: "" }
+          },
+          console.log(this.state)
+        );
     }
   }
   render() {
