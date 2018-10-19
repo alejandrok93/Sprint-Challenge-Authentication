@@ -52,6 +52,8 @@
   width: 150px;
   padding: 15px;
   margin: 20px;
+  border-radius: 5px;
+  box-shadow: 15px 20px lightblue;
 
   background-color: darkcyan;
   color: white;
