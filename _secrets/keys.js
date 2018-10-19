@@ -1,3 +1,7 @@
+require("dotenv").load();
+
+const key = process.env.JWT_SECRET;
+
 module.exports = {
-  jwtKey: "this.is%my^secret*key"
+  jwtKey: key
 };

@@ -1,6 +1,7 @@
 const axios = require("axios");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
+
 const { authenticate } = require("./middlewares");
 const db = require("../database/dbConfig.js");
 
@@ -13,7 +14,7 @@ module.exports = server => {
 //get JWT secret key
 const secret = require("../_secrets/keys").jwtKey;
 
-//console.log(process.env.JWT_SECRET);
+console.log(secret);
 
 function register(req, res) {
   // implement user registration
