@@ -29,9 +29,22 @@ function register(req, res) {
     .insert(user)
     .then(idObj => {
       const id = idObj[0];
-      res.status(201).json({ user_id: id });
+      db("users")
+        .where({ id: id })
+        .first()
+        .then(user => {
+          const token = generateToken(user);
+          res.status(201).json({ username: user.username, token });
+        })
+        .catch(err =>
+          res
+            .status(500)
+            .json({ error: "There was an error registering the user" })
+        );
     })
-    .catch(err => res.status(500).json(err));
+    .catch(err =>
+      res.status(500).json({ error: "There was an error registering the user" })
+    );
 }
 
 function login(req, res) {
