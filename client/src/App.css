@@ -46,10 +46,12 @@
   width: 100%;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .joke {
-  width: 150px;
+  width: 550px;
+  height: 150px;
   padding: 15px;
   margin: 20px;
   border-radius: 5px;
@@ -57,4 +59,36 @@
 
   background-color: darkcyan;
   color: white;
+}
+
+.next {
+  width: 90px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: beige;
+  align-self: center;
+  text-align: center;
+  padding-top: 25px;
+  font-size: 24px;
+  cursor: pointer;
+  margin-left: 40px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+}
+
+.emoji {
+  width: 40px;
+  height: 40px;
+  margin: 0 5px;
+
+  background-size: 100%;
+  background-repeat: no-repeat;
+
+  background-image: url(./awesome-emoji.png);
 }

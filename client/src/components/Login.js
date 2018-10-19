@@ -57,7 +57,7 @@ class Login extends React.Component {
         </form>
 
         <a className="jokes-link" href="/">
-          Jokes
+          Tell me Jokes!
         </a>
       </div>
     );
